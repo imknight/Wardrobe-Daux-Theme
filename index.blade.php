@@ -6,4 +6,5 @@
 
 @section('content')
   @include(theme_path('inc.home'))
+  @include(theme_path('inc.tracking'))
 @stop
