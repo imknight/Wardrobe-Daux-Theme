@@ -28,7 +28,21 @@
 			</ul>
 		</div>
 		<div class="well well-sidebar">
-
+				<!-- Links -->
+				@if (Config::get('theme.links'))
+					@foreach (Config::get('theme.links') as $name => $url)
+					<a href="{{ $url }}" target="_blank">{{ $name }}</a><br>
+					@endforeach
+				@endif
+				<!-- Twitter -->
+				@if (Config::get('theme.twitter'))
+					@foreach (Config::get('theme.twitter') as $handle)
+						<div class="twitter">
+						<hr/>
+							<iframe allowtransparency="true" frameborder="0" scrolling="no" style="width:162px; height:20px;" src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{ $handle }}&amp;show_count=false"></iframe>
+						</div>
+					@endforeach
+				@endif
 		</div>
 	</div>
 	<div class="right-column {{ Config::get('theme.float') ? 'float-view':'' }} content-area span9">
