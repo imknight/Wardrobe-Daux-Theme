@@ -10,9 +10,8 @@ return array(
 	'google_analytics' => false,
 	'piwik_analytics' => false,
 	'links' =>array(
-		'Download' => '',
-		'GitHub Repo' => '',
-		'Help/Support/Bugs' => '',
-		'Made by Todaymade' => 'http://todaymade.com'
+		'Link 1' => '',
+		'Link 2' => '',
+		'Link 3' => '',
 	),
 );

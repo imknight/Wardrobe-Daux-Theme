@@ -1,3 +1,6 @@
+@if (Config::get('theme.repo'))
+	<a href="https://github.com/{{ Config::get('theme.repo') }}" target="_blank" id="github-ribbon"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+@endif
 <div class="container-fluid fluid-height wrapper">
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
@@ -20,10 +23,16 @@
 		<div id="sub-nav-collapse" class="sub-nav-collapse">
 			<!-- Navigation -->
 			<ul class="nav nav-list">
-				@foreach (Wardrobe::tags() as $item)
-				  @if ($item['tag'] != "")
-				    <li><a href="#" class="aj-nav folder">{{ $item['tag'] }}</a></li>
-				  @endif
+				@foreach ($tree as $item=>$data)
+				    <li><a href="#" class="aj-nav folder">{{ $item }}</a>
+				    @if ($data)
+				    	<ul class="nav nav-list">
+							@foreach($data as $link)
+								<li>{{ $link }}</li>
+							@endforeach
+				    	</ul>
+				    @endif
+				    </li>
 				@endforeach
 			</ul>
 		</div>
@@ -48,10 +57,17 @@
 	<div class="right-column {{ Config::get('theme.float') ? 'float-view':'' }} content-area span9">
 		<div class="content-page">
 			<article>
+					@if (isset($post))
 					<div class="page-header">
 						<h1>{{ $post->title }}</h1>
 					</div>
 				    {{ $post->parsed_content }}
+					@else
+					<div class="page-header">
+						<h1>Oh no</h1>
+					</div>	
+					<h3>Oh No. That page dosn't exist</h3>				
+				    @endif
 			</article>
 		</div>
 	</div>
