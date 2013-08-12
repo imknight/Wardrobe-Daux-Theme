@@ -47,7 +47,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="span10 offset1">						
-				<?php //echo $page['html'];?>
+				@yield('homecontent')
 			</div>
 		</div>
 	</div>

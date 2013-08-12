@@ -9,9 +9,9 @@
   <meta name="description" content="{{ Config::get('theme.description') }}" />
   <meta name="author" content="{{ site_title() }}">
   @if (Config::get('theme.theme'))
-  <link rel="icon" href="{{ url(theme_path('img/favicon.png')) }}" type="image/x-icon">
-  @else
   <link rel="icon" href="{{ url(theme_path('img/favicon-'.Config::get('theme.theme').'.png')) }}" type="image/x-icon">
+  @else
+  <link rel="icon" href="{{ url(theme_path('img/favicon.png')) }}" type="image/x-icon">
   @endif
   <!-- Mobile -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
