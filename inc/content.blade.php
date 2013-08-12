@@ -58,9 +58,21 @@
 		<div class="content-page">
 			<article>
 					@if (isset($post))
-					<div class="page-header">
-						<h1>{{ $post->title }}</h1>
-					</div>
+						@if (Config::get('theme.date_modified'))
+							<div class="page-header sub-header clearfix">
+								<h1>{{ $post->title }}</h1>
+									<span style="float: left; font-size: 10px; color: gray;">
+										<?php echo date("l, F j, Y", strtotime($post->publish_date));?>
+									</span>
+									<span style="float: right; font-size: 10px; color: gray;">
+										<?php echo date ("g:i A", strtotime($post->publish_date));?>
+									</span>
+							</div>						
+						@else
+						<div class="page-header">
+							<h1>{{ $post->title }}</h1>
+						</div>
+						@endif
 				    {{ $post->parsed_content }}
 					@else
 					<div class="page-header">
