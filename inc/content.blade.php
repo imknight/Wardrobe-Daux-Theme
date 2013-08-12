@@ -31,7 +31,7 @@
 
 		</div>
 	</div>
-	<div class="right-column content-area span9">
+	<div class="right-column {{ Config::get('theme.float') ? 'float-view':'' }} content-area span9">
 		<div class="content-page">
 			<article>
 					<div class="page-header">

@@ -2,6 +2,7 @@
 return array(
 	'tagline' => 'The Easiest Way To Document Your Project',
 	'theme' => 'navy',
+	'float' => true,
 	'date_modified' => true,
 	'repo' => 'justinwalsh/daux.io',
 	'twitter' => array( 'justin_walsh', 'todaymade', 'imknight' ),
